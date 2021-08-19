@@ -1,25 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
-
+    path: '/test',
+    component: () => import('../components/content/Test')
+  }]
+// 在router4中使用createRouter替代了new VueRouter;
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+  // 在此处引入所有页面的路由配置数组routes;
 })
-
 export default router
